@@ -16,3 +16,10 @@ async function getUser() {
         .get();
 }
 
+//This function will get the photo of the signed-in user by using the /me/photo/$value Microsoft Graph API endpoint.
+async function getUserPhoto() {
+    ensureScope('user.read');
+     return await graphClient
+         .api('/me/photo/$value')
+         .get();
+ }
